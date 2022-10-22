@@ -6,6 +6,7 @@ package c108156202_miterm_exam;
 
 import designPattern.FactoryMethod.*;
 import designPattern.Strategy.*;
+import designPattern.SystemArchitecture.*;
 
 /**
  *
@@ -19,6 +20,7 @@ public class C108156202_Miterm_Exam {
     public static void main(String[] args) {
 //        FactoryDesignPattern();
 //        Strategy();
+        SystemArchitecture();
     }
 
     private static void FactoryDesignPattern() {
@@ -48,5 +50,16 @@ public class C108156202_Miterm_Exam {
         BusStrategy myBusStrategy = new BusStrategy();
         PriceCalculator BusPriceCalculator = new PriceCalculator(myBusStrategy);
         System.out.println(BusPriceCalculator.calculate(20));
+    }
+
+    private static void SystemArchitecture() {
+        DrinkShop drinkShop = new DrinkShop();
+        Tea tea = (Tea) drinkShop.order("tea", Drink.SugarType.QUARTER, Drink.IceType.REGULAR);
+        tea.setTeaType(Tea.TeaType.GINGER);
+        System.out.println(tea.getIce() + " " + tea.getSugar() + " " + tea.getTeaType());
+
+        Coffee coffee = (Coffee) drinkShop.order("coffee", Drink.SugarType.QUARTER, Drink.IceType.HOT);
+        coffee.setCoffeeType(Coffee.CoffeeType.AMERICANO);
+        System.out.println(coffee.getIce() + " " + coffee.getSugar() + " " + coffee.getCoffeeType());
     }
 }
