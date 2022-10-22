@@ -4,6 +4,8 @@
  */
 package c108156202_miterm_exam;
 
+import designPattern.FactoryMethod.*;
+
 /**
  *
  * @author wangh
@@ -14,7 +16,18 @@ public class C108156202_Miterm_Exam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FactoryDesignPattern();
     }
+
     
+    private static void FactoryDesignPattern() {
+
+        FrenchFriesFactory FrenchFriesFactory = new FrenchFriesFactory();
+        Product fries = FrenchFriesFactory.productionProduct();
+
+        Product myfries = FrenchFriesFactory.productionProduct(false);
+        
+         fries.describe();
+         myfries.describe();
+    }
 }
