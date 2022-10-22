@@ -54,11 +54,11 @@ public class C108156202_Miterm_Exam {
 
     private static void SystemArchitecture() {
         DrinkShop drinkShop = new DrinkShop();
-        Tea tea = (Tea) drinkShop.order("tea", Drink.SugarType.QUARTER, Drink.IceType.REGULAR);
+        Tea tea = (Tea) drinkShop.order(DrinkShop.DrinkType.TEA, Drink.SugarType.QUARTER, Drink.IceType.REGULAR);
         tea.setTeaType(Tea.TeaType.GINGER);
         System.out.println(tea.getIce() + " " + tea.getSugar() + " " + tea.getTeaType());
 
-        Coffee coffee = (Coffee) drinkShop.order("coffee", Drink.SugarType.QUARTER, Drink.IceType.HOT);
+        Coffee coffee = (Coffee) drinkShop.order(DrinkShop.DrinkType.COFFEE, Drink.SugarType.QUARTER, Drink.IceType.HOT);
         coffee.setCoffeeType(Coffee.CoffeeType.AMERICANO);
         System.out.println(coffee.getIce() + " " + coffee.getSugar() + " " + coffee.getCoffeeType());
     }

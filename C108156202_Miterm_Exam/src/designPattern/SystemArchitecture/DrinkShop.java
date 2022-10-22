@@ -9,15 +9,19 @@ package designPattern.SystemArchitecture;
  * @author wangh
  */
 public class DrinkShop {
-    public Drink order(String drink,Drink.SugarType sugarType, Drink.IceType iceType){
-        drink.toLowerCase();
-        switch (drink){
-            case "coffee":
+    public Drink order(DrinkType drinktype,Drink.SugarType sugarType, Drink.IceType iceType){
+        switch (drinktype){
+            case COFFEE:
                 return new Coffee(sugarType,iceType);
-            case "tea":
+            case TEA:
                 return new Tea(sugarType,iceType);
             default:
                 return null;
         }
     }
+    
+    public enum DrinkType{
+        COFFEE,TEA
+    }
+    
 }
