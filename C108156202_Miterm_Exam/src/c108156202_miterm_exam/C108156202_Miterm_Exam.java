@@ -21,8 +21,8 @@ public class C108156202_Miterm_Exam {
     public static void main(String[] args) {
 //        FactoryDesignPattern();
 //        Strategy();
-//        SystemArchitecture();
-        Singleton();
+        SystemArchitecture();
+//        Singleton();
     }
 
     private static void FactoryDesignPattern() {
