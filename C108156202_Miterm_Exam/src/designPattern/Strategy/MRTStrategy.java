@@ -15,13 +15,13 @@ public class MRTStrategy implements IStrategy_BusStrategy {
         int totalPrice = 0 ;
         if(km <= 0) return  totalPrice ;
 
-        if(km <= 10) {
+        if(km <= 20) {
             totalPrice = 20 ;
         }
 
         if(km > 10){
             int count = (( km - 10 ) / 5 ) + 1 ;
-            totalPrice = 20 + 5 * count ;
+            totalPrice = totalPrice + 5 * count ;
         }
 
         return totalPrice;
