@@ -7,6 +7,7 @@ package c108156202_miterm_exam;
 import designPattern.FactoryMethod.*;
 import designPattern.Strategy.*;
 import designPattern.SystemArchitecture.*;
+import designPattern.Singleton.*;
 
 /**
  *
@@ -20,15 +21,16 @@ public class C108156202_Miterm_Exam {
     public static void main(String[] args) {
 //        FactoryDesignPattern();
 //        Strategy();
-        SystemArchitecture();
+//        SystemArchitecture();
+        Singleton();
     }
 
     private static void FactoryDesignPattern() {
 
         FrenchFriesFactory FrenchFriesFactory = new FrenchFriesFactory();
-        Product fries = FrenchFriesFactory.productionProduct();
+        designPattern.FactoryMethod.Product fries = FrenchFriesFactory.productionProduct();
 
-        Product myfries = FrenchFriesFactory.productionProduct(false);
+         designPattern.FactoryMethod.Product myfries = FrenchFriesFactory.productionProduct(false);
 
         fries.describe();
         myfries.describe();
@@ -61,5 +63,18 @@ public class C108156202_Miterm_Exam {
         Coffee coffee = (Coffee) drinkShop.order(DrinkShop.DrinkType.COFFEE, Drink.SugarType.QUARTER, Drink.IceType.HOT);
         coffee.setCoffeeType(Coffee.CoffeeType.AMERICANO);
         System.out.println(coffee.getIce() + " " + coffee.getSugar() + " " + coffee.getCoffeeType());
+    }
+
+    private static void Singleton() {
+
+        EnumSingleton obj1 = EnumSingleton.INSTANCE;
+        EnumSingleton obj2 = EnumSingleton.INSTANCE;
+        System.out.println(obj1 == obj2);
+        
+        Cola cola = (Cola) SingletonFactory.getColaFactory().getProduct();
+        Hamberger humberger =(Hamberger) SingletonFactory.getHumbergerFactory().getProduct();
+        
+        System.out.println(cola.getName());
+        System.out.println(humberger.getName());
     }
 }
