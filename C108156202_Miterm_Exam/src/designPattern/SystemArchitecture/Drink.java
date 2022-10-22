@@ -8,7 +8,7 @@ package designPattern.SystemArchitecture;
  *
  * @author wangh
  */
-public abstract class Drink {
+public class Drink {
 
     SugarType sugar;
     IceType ice;

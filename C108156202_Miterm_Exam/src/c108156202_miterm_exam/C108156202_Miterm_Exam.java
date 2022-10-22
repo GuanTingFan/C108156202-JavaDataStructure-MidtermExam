@@ -9,6 +9,7 @@ import designPattern.Strategy.*;
 import designPattern.SystemArchitecture.*;
 import designPattern.Singleton.*;
 import designPattern.CheckoutPolicy.*;
+import designPattern.Decorator.*;
 
 /**
  *
@@ -24,7 +25,8 @@ public class C108156202_Miterm_Exam {
 //        Strategy();
 //        SystemArchitecture();
 //        Singleton();
-        CheckoutPolicy();
+//        CheckoutPolicy();
+        Decorator();
     }
 
     private static void FactoryDesignPattern() {
@@ -85,10 +87,30 @@ public class C108156202_Miterm_Exam {
         drinkOrder.addDrink(new Coffee2(165));
         drinkOrder.addDrink(new MilkTea(55, new ReducePricePolicy(20)));
         double price = drinkOrder.getTotalPrice(new NoneDiscount(1));
-        
+
         System.out.println(price);
-        
+
         price = drinkOrder.getTotalPrice(new MultiplyStrategy(0.9));
         System.out.println(price);
+    }
+
+    private static void Decorator() {
+        Restaurant restaurant = new Restaurant();
+        SimpleCombo simpleCombo = new SimpleCombo(restaurant);
+
+        System.out.println("簡餐：");
+        simpleCombo.order();
+
+        BusinessLunch businessLunch = new BusinessLunch(restaurant);
+        System.out.println("商業午餐：");
+        businessLunch.order();
+
+        FullCombo fullCombo = new FullCombo(restaurant);
+        System.out.println("全餐：");
+        fullCombo.order();
+
+        System.out.println("");
+        SimpleSet simpleSet = new SimpleSet();
+        simpleSet.Show();
     }
 }
