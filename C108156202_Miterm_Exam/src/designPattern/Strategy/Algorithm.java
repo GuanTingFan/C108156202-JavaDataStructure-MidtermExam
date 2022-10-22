@@ -9,7 +9,9 @@ package designPattern.Strategy;
  * @author wangh
  */
 public class Algorithm{
-
+    /*
+        嘗試以這種方式撰寫，不確定是否優良，等待查證中。。。
+    */
     static class add implements IStrategy {
         @Override
         public int caculate(int a, int b) {

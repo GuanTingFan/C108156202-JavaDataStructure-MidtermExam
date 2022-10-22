@@ -8,6 +8,7 @@ import designPattern.FactoryMethod.*;
 import designPattern.Strategy.*;
 import designPattern.SystemArchitecture.*;
 import designPattern.Singleton.*;
+import designPattern.CheckoutPolicy.*;
 
 /**
  *
@@ -21,8 +22,9 @@ public class C108156202_Miterm_Exam {
     public static void main(String[] args) {
 //        FactoryDesignPattern();
 //        Strategy();
-        SystemArchitecture();
+//        SystemArchitecture();
 //        Singleton();
+        CheckoutPolicy();
     }
 
     private static void FactoryDesignPattern() {
@@ -30,7 +32,7 @@ public class C108156202_Miterm_Exam {
         FrenchFriesFactory FrenchFriesFactory = new FrenchFriesFactory();
         designPattern.FactoryMethod.Product fries = FrenchFriesFactory.productionProduct();
 
-         designPattern.FactoryMethod.Product myfries = FrenchFriesFactory.productionProduct(false);
+        designPattern.FactoryMethod.Product myfries = FrenchFriesFactory.productionProduct(false);
 
         fries.describe();
         myfries.describe();
@@ -70,11 +72,23 @@ public class C108156202_Miterm_Exam {
         EnumSingleton obj1 = EnumSingleton.INSTANCE;
         EnumSingleton obj2 = EnumSingleton.INSTANCE;
         System.out.println(obj1 == obj2);
-        
+
         Cola cola = (Cola) SingletonFactory.getColaFactory().getProduct();
-        Hamberger humberger =(Hamberger) SingletonFactory.getHumbergerFactory().getProduct();
-        
+        Hamberger humberger = (Hamberger) SingletonFactory.getHumbergerFactory().getProduct();
+
         System.out.println(cola.getName());
         System.out.println(humberger.getName());
+    }
+
+    private static void CheckoutPolicy() {
+        DrinkOrder drinkOrder = new DrinkOrder();
+        drinkOrder.addDrink(new Coffee2(165));
+        drinkOrder.addDrink(new MilkTea(55, new ReducePricePolicy(20)));
+        double price = drinkOrder.getTotalPrice(new NoneDiscount(1));
+        
+        System.out.println(price);
+        
+        price = drinkOrder.getTotalPrice(new MultiplyStrategy(0.9));
+        System.out.println(price);
     }
 }
