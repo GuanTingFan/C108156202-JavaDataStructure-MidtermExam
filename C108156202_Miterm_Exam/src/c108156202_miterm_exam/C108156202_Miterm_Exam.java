@@ -5,7 +5,7 @@
 package c108156202_miterm_exam;
 
 import designPattern.FactoryMethod.*;
-
+import designPattern.Strategy.*;
 /**
  *
  * @author wangh
@@ -16,9 +16,9 @@ public class C108156202_Miterm_Exam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FactoryDesignPattern();
+//        FactoryDesignPattern();
+        Strategy();
     }
-
     
     private static void FactoryDesignPattern() {
 
@@ -29,5 +29,19 @@ public class C108156202_Miterm_Exam {
         
          fries.describe();
          myfries.describe();
+    }
+    
+    private static void Strategy(){
+ 
+        Calculator myCalculator = new Calculator();
+     
+        Calculator.DoType DoType = Calculator.DoType.ADD;
+        
+        myCalculator.setStrategy(DoType.SuBTRACT); 
+        System.out.println(myCalculator.execute(1, 5));
+        
+        MRTStrategy myMRTStartegy = new MRTStrategy(); 
+        PriceCalculator myPriceCalculator = new PriceCalculator(myMRTStartegy);
+       System.out.println(myPriceCalculator.calculate(20));
     }
 }

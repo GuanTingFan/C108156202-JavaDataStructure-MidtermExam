@@ -9,6 +9,6 @@ package designPattern.FactoryMethod;
  * @author wangh
  */
 public interface Factory {
-    
+    //生產產品
     public Product productionProduct();
 }
