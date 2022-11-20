@@ -14,7 +14,6 @@ public class SimpleSet extends Item{
         Salad salad = new Salad();
         MainMeal mainMeal = new MainMeal();
         DecoratorDrink drink = new DecoratorDrink();
-        salad.decorate(super.order);
         mainMeal.decorate(salad);
         drink.decorate(mainMeal);
         super.order = drink;

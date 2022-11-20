@@ -8,17 +8,18 @@ package designPattern.Decorator;
  *
  * @author wangh
  */
-public class Item extends DecoratorOrder{
+public class Item extends DecoratorOrder {
+
     protected DecoratorOrder order;
-    
-    public void decorate(DecoratorOrder order){
+
+    public void decorate(DecoratorOrder order) {
         this.order = order;
     }
-    
+
     @Override
-    public void Show(){
-           if (order != null){
-               order.Show();
-           }
+    public void Show() {
+        if (order != null) {
+            order.Show();
+        }
     }
 }
