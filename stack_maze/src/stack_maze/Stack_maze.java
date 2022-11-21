@@ -17,16 +17,17 @@ public class Stack_maze {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int[][] Maze = new int[][]{{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
-        {1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1},
-        {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
-        {1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1},
-        {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
-        {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
-        {1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
-        {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+        int[][] Maze = new int[][]{
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
+            {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1},
+            {1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
+            {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
         Stack<int[]> Canwalk = new Stack<int[]>();
         Canwalk.push(new int[]{1, 1});
@@ -37,7 +38,6 @@ public class Stack_maze {
         int[] nl = Canwalk.peek();
         Maze[nl[0]][nl[1]] = 2;
 
-
         if (Canwalk.peek()[0] == 8 && Canwalk.peek()[1] == 10) {
 
             for (int i = 0; i <= 9; i++) {  // 顯示迷宮圖形
@@ -47,10 +47,10 @@ public class Stack_maze {
                 }
                 System.out.println();
             }
-            
-              System.out.println();
+
+            System.out.println();
         }
-        
+
         //如果左方可走
         if (Maze[nl[0]][nl[1] - 1] == 0) {
             Canwalk.push(new int[]{nl[0], nl[1] - 1});
@@ -74,8 +74,8 @@ public class Stack_maze {
             Canwalk.push(new int[]{nl[0] + 1, nl[1]});
             WalkMaze(Canwalk, Maze);
         }
-        
-          Maze[nl[0]][nl[1]] = 0;
+
+        Maze[nl[0]][nl[1]] = 0;
     }
 
 }
