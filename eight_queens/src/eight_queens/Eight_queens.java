@@ -32,8 +32,7 @@ public class Eight_queens {
                 pushPiece(n + 1);
             } else {
                 for (int k = 0; k < 8; k++) { 
-                    for (int j = 0; j < 8; j++) 
-                    {
+                    for (int j = 0; j < 8; j++) {
                         System.out.print(Checkerboard[k][j] + "  ");
                     }
                     System.out.println();
