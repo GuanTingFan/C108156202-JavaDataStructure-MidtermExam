@@ -51,21 +51,16 @@ public class Eight_queens {
                 return false;
             }
         }
+        
         int i = 1;
-        while (true) {
-            if (x - i < 0 || y - i < 0) {
-                break;
-            }
+        while ((x - i < 0 || y - i < 0) == false) {
             if (Checkerboard[x - i][y - i] == 1) {
                 return false;
             }
             i++;
         }
         i = 1;
-        while (true) {
-            if (x - i < 0 || y + i > 7) {
-                break;
-            }
+        while ((x - i < 0 || y + i > 7) == false) {
             if (Checkerboard[x - i][y + i] == 1) {
                 return false;
             }
