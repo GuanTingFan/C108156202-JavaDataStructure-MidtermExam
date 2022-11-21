@@ -51,7 +51,6 @@ public class Eight_queens {
                 return false;
             }
         }
-        
         int i = 1;
         while ((x - i < 0 || y - i < 0) == false) {
             if (Checkerboard[x - i][y - i] == 1) {
