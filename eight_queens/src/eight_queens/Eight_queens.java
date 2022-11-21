@@ -31,8 +31,8 @@ public class Eight_queens {
             if (n < 7) {
                 pushPiece(n + 1);
             } else {
-                for (int k = 0; k < 8; k++) {  // 顯示迷宮圖形
-                    for (int j = 0; j < 8; j++) // 顯示座標值
+                for (int k = 0; k < 8; k++) { 
+                    for (int j = 0; j < 8; j++) 
                     {
                         System.out.print(Checkerboard[k][j] + "  ");
                     }
