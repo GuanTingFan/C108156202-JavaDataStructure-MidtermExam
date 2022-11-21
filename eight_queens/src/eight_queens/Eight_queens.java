@@ -23,7 +23,6 @@ public class Eight_queens {
     }
 
     public static void pushPiece(int n) {
-
         for (int i = 0; i < 8; i++) {
             if (checkCanPush(n, i) == false) {
                 continue;
@@ -39,13 +38,11 @@ public class Eight_queens {
                     }
                     System.out.println();
                 }
-
                 System.out.println();
                 ans += 1;
             }
             Checkerboard[n][i] = 0;
         }
-
     }
 
     public static boolean checkCanPush(int x, int y) {
@@ -54,7 +51,6 @@ public class Eight_queens {
                 return false;
             }
         }
-
         int i = 1;
         while (true) {
             if (x - i < 0 || y - i < 0) {
@@ -65,7 +61,6 @@ public class Eight_queens {
             }
             i++;
         }
-
         i = 1;
         while (true) {
             if (x - i < 0 || y + i > 7) {

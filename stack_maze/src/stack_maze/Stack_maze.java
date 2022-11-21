@@ -43,7 +43,7 @@ public class Stack_maze {
             for (int i = 0; i <= 9; i++) {  // 顯示迷宮圖形
                 for (int j = 0; j <= 11; j++) // 顯示座標值
                 {
-                    System.out.print(Maze[i][j] + " ");
+                    System.out.print(Maze[i][j] + "  ");
                 }
                 System.out.println();
             }
