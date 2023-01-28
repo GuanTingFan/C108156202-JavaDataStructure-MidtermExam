@@ -2,13 +2,13 @@
 import os
 import openai
 openai.organization = "org-A9GruOLOvupXJv1MqcNuW1EK"
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.list()
 
 response = openai.Completion.create(
     model="text-davinci-003",
-    prompt="\nHuman: JAVA的DFS完整程式\nAI:",
+    prompt="\nHuman: JAVA的Dijkstra完整程式\nAI:",
     temperature=0.9,
     max_tokens=1500,
     top_p=1,
